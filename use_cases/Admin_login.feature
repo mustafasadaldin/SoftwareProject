@@ -5,6 +5,9 @@ When admin make login action
 Then admin should be logged in
 
 
+
+
+
 Scenario: Administrator has the wrong password
 Given admin login in with wrong password... invalid cradentials
 When admin make log in action
