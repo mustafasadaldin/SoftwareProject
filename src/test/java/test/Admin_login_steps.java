@@ -35,7 +35,7 @@ public Admin_login_steps( Admin ad) {
 		Admin.v.get(1).username=dt.cell(1, 0);
 		Admin.v.get(1).password=dt.cell(1, 1);
 		
-		JOptionPane.showMessageDialog(null, "given step done");
+		
 				
 	}
 
@@ -52,7 +52,7 @@ public Admin_login_steps( Admin ad) {
 	@When("admin login valid cradentials")
 	public void admin_login_valid_cradentials() {
 	    ad.login();
-	    JOptionPane.showMessageDialog(null, "when step done");
+	   
 	}
 
 	@Then("admin should be logged in")
