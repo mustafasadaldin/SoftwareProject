@@ -34,6 +34,8 @@ public Admin_login_steps( Admin ad) {
 		Admin.v.get(0).password=dt.cell(0, 1);
 		Admin.v.get(1).username=dt.cell(1, 0);
 		Admin.v.get(1).password=dt.cell(1, 1);
+		Admin.v.get(2).username=dt.cell(2, 0);
+		Admin.v.get(2).password=dt.cell(2, 1);
 		
 		
 				
