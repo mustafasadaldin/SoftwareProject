@@ -13,6 +13,7 @@ public int logout=0;
 public static ArrayList<Admin> v=new ArrayList<Admin>();
 
 
+
  // Scenario1 login with valid cradentials
 	public void login() {
 		System.out.print("username:");
