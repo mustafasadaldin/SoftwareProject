@@ -30,6 +30,7 @@ public Admin_login_steps( Admin ad) {
 	public void admin_want_to_login(io.cucumber.datatable.DataTable dt) {
 		Admin.v.add(new Admin());
 		Admin.v.add(new Admin());
+		Admin.v.add(new Admin());
 		Admin.v.get(0).username=dt.cell(0, 0);
 		Admin.v.get(0).password=dt.cell(0, 1);
 		Admin.v.get(1).username=dt.cell(1, 0);
