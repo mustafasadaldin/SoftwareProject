@@ -24,6 +24,7 @@ public static ArrayList<Admin> v=new ArrayList<Admin>();
 		if(s1.compareTo(v.get(i).username)==0) {
 			if(s2.compareTo(v.get(i).password)==0) {
 				login=1;
+				logout=0;
 				JOptionPane.showMessageDialog(null, "welcome");
 				return;
 			}
@@ -37,6 +38,10 @@ public static ArrayList<Admin> v=new ArrayList<Admin>();
 		login=0;
 	
 		
+	}
+	public void logout() {
+		login=0;
+		logout=1;
 	}
 	
 	
