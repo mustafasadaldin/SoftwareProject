@@ -8,7 +8,7 @@ public class Admin {
 Scanner sc=new Scanner(System.in);
 public String username="";
 public String password="";
-public int login;
+public int login=0;
 public int logout=0;
 public static ArrayList<Admin> v=new ArrayList<Admin>();
 
@@ -42,6 +42,7 @@ public static ArrayList<Admin> v=new ArrayList<Admin>();
 	public void logout() {
 		login=0;
 		logout=1;
+		JOptionPane.showMessageDialog(null, "logged out");
 	}
 	
 	
