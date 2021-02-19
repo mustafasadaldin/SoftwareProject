@@ -24,6 +24,7 @@ public boolean isAdded =false;
 	public void the_admin_logged_in() {
 		a.login=1;
 		a.logout=0;
+		
 	   
 	}
 

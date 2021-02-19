@@ -17,7 +17,8 @@ public class Admin_logout_steps {
 
 	@Given("the admin  has been logged in")
 	public void the_admin_has_been_logged_in() {
-		a.login();
+		a.login=1;
+		a.logout=0;
 	}
 
 	@When("the admin click logout")
