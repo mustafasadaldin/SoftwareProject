@@ -11,7 +11,7 @@ import static org.junit.Assert.assertTrue;
 public class AddBooksteps {
 public Book b;
 public Admin a;
-public boolean isAdded =false;
+
 
 
 
@@ -28,12 +28,12 @@ public boolean isAdded =false;
 
 	@When("the admin adds a book with title, author ,signature and ISBN")
 	public void the_admin_adds_a_book_with_title_author_signature_and_isbn() {
-	 isAdded= b.add(a.login);
+	  b.add(a.login);
 	}
 
 	@Then("the book will be added to the system")
 	public void the_book_will_be_added_to_the_system() {
-	   assertTrue(isAdded==true);
+	   assertTrue(b.isAdded==true);
 	}
 
 	@Given("the admin logged out")
@@ -44,7 +44,7 @@ public boolean isAdded =false;
 
 	@Then("the book will not  be added to the system")
 	public void the_book_will_not_be_added_to_the_system() {
-		 assertTrue(isAdded==false);
+		 assertTrue(b.isAdded==false);
 	}
 
 

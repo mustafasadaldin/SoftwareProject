@@ -1,17 +1,10 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-<<<<<<< HEAD
+
   <groupId>LIbrarry</groupId>
   <artifactId>AM1</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-=======
 
-  <groupId>LibrarrySystem</groupId>
-  <artifactId>AM_librarry</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-
-  
-  
   <dependencies>
   <dependency>
     <groupId>io.cucumber</groupId>
@@ -36,9 +29,5 @@
   
   
   
-  
-  
-  
-
->>>>>>> branch 'Amr' of https://github.com/mustafasadaldin/SoftwareProject
+ 
 </project>
