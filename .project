@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>AM1</name>
+=======
+<<<<<<< HEAD
+	<name>AM_librarry</name>
+=======
+	<name>AM_LIBRARY</name>
+>>>>>>> refs/heads/master
+>>>>>>> branch 'Amr' of https://github.com/mustafasadaldin/SoftwareProject
 	<comment></comment>
 	<projects>
 	</projects>
