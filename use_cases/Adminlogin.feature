@@ -14,4 +14,4 @@ Then admin should be logged in
 
 Scenario: Administrator has the wrong password
 When admin  login with wrong password... invalid cradentials
-Then error message should be viewd 
+Then admin should not be loged in 

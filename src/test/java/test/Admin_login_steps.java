@@ -69,8 +69,8 @@ public Admin_login_steps( Admin ad) {
 		ad.login();
 	}
 
-	@Then("error message should be viewd")
-	public void error_message_should_be_viewd() {
+	@Then("admin should not be loged in")
+	public void admin_should_not_be_loged_in() {
 	   assertTrue(ad.login==0);
 	}
 
