@@ -9,15 +9,10 @@ import main.Book;
 import static org.junit.Assert.assertTrue;
 
 public class AddBooksteps {
-public Book b;
 public Admin a;
 
-
-
-
-	public AddBooksteps(Book b, Admin a) {
+	public AddBooksteps( Admin a) {
 	
-	this.b = b;
 	this.a = a;
 }
 	@Given("the admin logged in")
@@ -28,12 +23,12 @@ public Admin a;
 
 	@When("the admin adds a book with title, author ,signature and ISBN")
 	public void the_admin_adds_a_book_with_title_author_signature_and_isbn() {
-	  b.add(a.login);
+	  Book.add(a.login);
 	}
 
 	@Then("the book will be added to the system")
 	public void the_book_will_be_added_to_the_system() {
-	   assertTrue(b.isAdded==true);
+	   assertTrue(Book.isAdded==true);
 	}
 
 	@Given("the admin logged out")
@@ -44,7 +39,7 @@ public Admin a;
 
 	@Then("the book will not  be added to the system")
 	public void the_book_will_not_be_added_to_the_system() {
-		 assertTrue(b.isAdded==false);
+		 assertTrue(Book.isAdded==false);
 	}
 
 

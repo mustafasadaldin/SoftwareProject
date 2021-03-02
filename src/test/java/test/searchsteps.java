@@ -82,14 +82,7 @@ public void the_admin_or_user_is_logged_in() {
   
 }
 
-@When("admin or user makes any book searching")
-public void admin_or_user_makes_any_book_searching() {
-	 b.SearchBookTitle();
-    b.SearchBookAuthor(); 
-    b.SearchBookSig();
-    b.SearchBookISBN();
-    
-}
+
 
 
 	@Then("the book must be found")

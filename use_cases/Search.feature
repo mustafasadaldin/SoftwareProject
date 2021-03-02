@@ -21,19 +21,26 @@ Scenario:
 When user search for substring of isbn for book
 Then the book must be found
 
-Scenario: Searching also works when the user/administrator is logged in
+Scenario Outline: Searching also works when the user/administrator is logged in
 Given the admin or user is logged in
-When admin or user makes any book searching
+When user search for substring of <sub> for book
 Then the book must be found  
+Examples:
+|sub|
+|title|
+|author|
+|signeture|
+|isbn|
 
-Scenario: No books match the criteria (substring)
-When user search for substring of title for non existing book
-When user search for substring of author for non existing book
-When user search for substring of signeture for non existing book
-When user search for substring of isbn for non existing book
+Scenario Outline: No books match the criteria (substring)
+When user search for substring of <substring from> for non existing book
 Then no book must be found
-
-
+Examples:
+|substring from|
+|title|
+|author|
+|signeture|
+|isbn|
 
 Scenario: Find more than one book
 When user search for a book parameter that included in more than book

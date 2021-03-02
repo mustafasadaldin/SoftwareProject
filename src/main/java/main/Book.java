@@ -63,6 +63,28 @@ public	int j;
 			
 			System.out.println("please enter the book ISBN :  ");
 			String s4 =scanner.next();
+			char ss[];
+			while(true) {
+				int flagg=0;
+				ss=s4.toCharArray();
+				if(ss.length==10) {
+					for(int i=0;i<10;i++) {
+						if(ss[i]>='0'&&ss[i]<='9')
+							continue;
+						else {
+							flagg=1;
+							break;
+						}
+							
+					}
+					if(flagg==0)
+						break;
+				}
+				JOptionPane.showMessageDialog(null, "please enter valid isbn");
+				System.out.println(" reenter the book ISBN :  ");
+				s4 =scanner.next();
+				
+			}
 			
 			Book b= new Book();
 			b.title=s1;
