@@ -42,6 +42,12 @@ Examples:
 |signeture|
 |isbn|
 
-Scenario: Find more than one book
-When user search for a book parameter that included in more than book
+Scenario Outline:
+When user search for a <book parameter> that included in more than book
 Then all books must be found
+Examples:
+|book parameter|
+| title |
+| signeture |
+| isbn |
+| author |

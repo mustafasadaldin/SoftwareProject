@@ -119,19 +119,37 @@ public void the_admin_or_user_is_logged_in() {
 	}
 
 	
-@When("user search for a book parameter that included in more than book")
-public void user_search_for_a_book_parameter_that_included_in_more_than_book() {
-    b.SearchBookTitle();
-}
+	@When("user search for a title that included in more than book")
+	public void user_search_for_a_title_that_included_in_more_than_book() {
+	   b.SearchBookTitle();
+	}
 
-@Then("all books must be found")
-public void all_books_must_be_found() {
-    assertTrue(b.j>1);
-}
 
+
+	@When("user search for a signeture that included in more than book")
+	public void user_search_for_a_signeture_that_included_in_more_than_book() {
+	   b.SearchBookSig();
+	}
+
+	@When("user search for a isbn that included in more than book")
+	public void user_search_for_a_isbn_that_included_in_more_than_book() {
+	  b.SearchBookISBN();
+	}
+
+	@When("user search for a author that included in more than book")
+	public void user_search_for_a_author_that_included_in_more_than_book() {
+	  b.SearchBookAuthor();
+	}
+
+	@Then("all books must be found")
+	public void all_books_must_be_found() {
+	    assertTrue(b.j>1);
+	}
+
+
+	}
 
 
 
 	
 	
-}
