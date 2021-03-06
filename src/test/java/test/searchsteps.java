@@ -11,7 +11,7 @@ public class searchsteps {
 Book b;
 
 	
-	
+
 	public searchsteps(Book b) {
 	this.b = b;
 }
@@ -67,20 +67,29 @@ public void user_search_for_substring_of_isbn_for_existing_book() {
 	   assertTrue(b.j==1);
 	}
 	
-	/*
-	@When("user search for a book parameter that does not exist")
-public void user_search_for_a_book_parameter_that_does_not_exist() {
-		b.SearchBookISBN();
+	
+	
+
+@When("user search for a title that included in more than book")
+public void user_search_for_a_title_that_included_in_more_than_book() {
+   b.SearchBookTitle();
 }
 
-@Then("massege tell him it is not here must be shown")
-public void massege_tell_him_it_is_not_here_must_be_shown() {
-    
+
+
+@When("user search for a signeture that included in more than book")
+public void user_search_for_a_signeture_that_included_in_more_than_book() {
+   b.SearchBookSig();
 }
-*/
-@When("user search for a book parameter that included in more than book")
-public void user_search_for_a_book_parameter_that_included_in_more_than_book() {
-    b.SearchBookTitle();
+
+@When("user search for a isbn that included in more than book")
+public void user_search_for_a_isbn_that_included_in_more_than_book() {
+  b.SearchBookISBN();
+}
+
+@When("user search for a author that included in more than book")
+public void user_search_for_a_author_that_included_in_more_than_book() {
+  b.SearchBookAuthor();
 }
 
 @Then("all books must be found")

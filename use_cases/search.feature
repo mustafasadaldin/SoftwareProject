@@ -10,7 +10,7 @@ When user search for substring of title for existing book
 Then the book must be found
 
 Scenario:
-When user search for substring of author for existing book
+When user search for substring of author for existing book 
 Then the book must be found
 
 Scenario:
@@ -21,10 +21,12 @@ Scenario:
 When user search for substring of isbn for existing book
 Then the book must be found
 
-#Scenario:
-#When user search for a book parameter that does not exist
-#Then massege tell him it is not here must be shown
-
-Scenario:
-When user search for a book parameter that included in more than book
+Scenario Outline:
+When user search for a <book parameter> that included in more than book
 Then all books must be found
+Examples:
+|book parameter|
+| title |
+| signeture |
+| isbn |
+| author |

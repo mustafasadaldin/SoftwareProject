@@ -42,8 +42,11 @@ public  ArrayList<Admin> v=new ArrayList<Admin>();
 		
 	}
 	public void logout() {
+		if(this.login==1) {
 		login=0;
 		logout=1;
+		}
+		
 	}
 }
 	

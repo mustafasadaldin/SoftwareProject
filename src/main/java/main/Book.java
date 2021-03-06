@@ -26,16 +26,23 @@ public	int j;
 	
 
 	public void add(int login) {
+		
 		if(login==0) {
 		flag= false;
+		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
 			System.out.println("please enter the book title :  ");
 			String s1 =scanner.next();
 			System.out.println("please enter the book author :  ");
 			String s2 =scanner.next();
-			System.out.println("please enter the book signature:  ");
-			String s3 =scanner.next();
+			String s3="" ;
+			
+			System.out.println("please  enter a book signature:  ");
+			s3 =scanner.next();
+				
+				
+			
 			System.out.println("please enter the book ISBN :  ");
 			String s4 =scanner.next();
 			char ss[];

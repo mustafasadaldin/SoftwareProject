@@ -45,13 +45,6 @@ public Admin_login_steps( Admin ad) {
 	
 	
 
-
-	
-
-
-
-
-
 	@When("admin login valid cradentials")
 	public void admin_login_valid_cradentials() {
 	    ad.login();

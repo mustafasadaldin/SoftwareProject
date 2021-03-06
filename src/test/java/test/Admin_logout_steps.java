@@ -22,7 +22,7 @@ public class Admin_logout_steps {
 public void the_admin_has_been_logged_in() {
 	   
 		a.login=1;
-		a.login=0;
+		a.logout=0;
 	}
 
 	@When("the admin click logout")
