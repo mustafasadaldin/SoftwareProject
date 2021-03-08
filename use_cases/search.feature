@@ -5,19 +5,19 @@ Given user want to search for book
 |java prog|amro|123456784|amro|
 |database|adel|1234567896|adel|
 
-Scenario:
+Scenario: search for substring of title for book
 When user search for substring of title for book
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of author for book
 When user search for substring of author for book
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of signeture for book
 When user search for substring of signeture for book
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of isbn for book
 When user search for substring of isbn for book
 Then the book must be found
 
@@ -42,7 +42,7 @@ Examples:
 |signeture|
 |isbn|
 
-Scenario Outline:
+Scenario Outline: search for a substring  that included in more than book
 When user search for a <book parameter> that included in more than book
 Then all books must be found
 Examples:
