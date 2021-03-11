@@ -59,8 +59,22 @@ public	int j;
 						}
 							
 					}
-					if(flagg==0)
+					if(flagg==0) {
+						int z=10;
+						int sum=0;
+						for(int i=0;i<ss.length;i++) {
+							sum=sum+(z*Integer.parseInt(ss[i]+""));
+							z--;
+						}
+						if(sum%11==0)
 						break;
+						else {
+							JOptionPane.showMessageDialog(null, "please enter valid isbn");
+							System.out.println(" reenter the book ISBN :  ");
+							s4 =scanner.next();
+							continue;
+						}
+					}
 				}
 				JOptionPane.showMessageDialog(null, "please enter valid isbn");
 				System.out.println(" reenter the book ISBN :  ");

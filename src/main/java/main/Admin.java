@@ -27,7 +27,6 @@ public  ArrayList<Admin> v=new ArrayList<Admin>();
 			if(s2.compareTo(v.get(i).password)==0) {
 				login=1;
 				logout=0;
-				JOptionPane.showMessageDialog(null, "welcome");
 				return;
 			}
 			// Scenario2 if user enter invalid cradentials
