@@ -10,10 +10,10 @@ public class Book {
 	public String author ;
 	public String signature;
 	public String ISBN;
-	public Boolean flag;
+	public static boolean isAdded;
 	Scanner sc=new Scanner(System.in);
-	Scanner scanner=new Scanner(System.in);
-	public ArrayList<Book> books=new ArrayList<Book>();
+	static Scanner scanner=new Scanner(System.in);
+	public static ArrayList<Book> books=new ArrayList<Book>();
 	String read;
 	Book bk[];
 public	int j;
@@ -25,10 +25,10 @@ public	int j;
 	}
 	
 
-	public void add(int login) {
-		
+	public  void add(int login) {
+		int f;
 		if(login==0) {
-		flag= false;
+			isAdded= false;
 		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
@@ -37,9 +37,25 @@ public	int j;
 			System.out.println("please enter the book author :  ");
 			String s2 =scanner.next();
 			String s3="" ;
-			
-			System.out.println("please  enter a book signature:  ");
-			s3 =scanner.next();
+			while( true) {
+				System.out.println("please  enter a unique book signature:  ");
+				f=1;
+				 s3 =scanner.next();
+				for(Book k: books) {
+					if(!k.signature.equals(s3)) {
+					
+					continue;
+					}
+					
+					f=0;
+					
+				}
+				
+				if(f==1) {
+				
+				break;
+				}
+			}
 				
 				
 			
@@ -90,7 +106,7 @@ public	int j;
 			
 			books.add(b);
 			JOptionPane.showMessageDialog(null, "book added succesfully");
-			flag= true;
+			isAdded= true;
 		}
 		
 		

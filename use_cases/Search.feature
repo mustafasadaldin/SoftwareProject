@@ -5,21 +5,42 @@ Given user want to search for book
 |java prog|amro|123456784|amro|
 |database|adel|1234567896|adel|
 
-Scenario:
+Scenario: search for substring of title for book
 When user search for substring of title for existing book
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of author for book
 When user search for substring of author for existing book 
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of signeture for book
 When user search for substring of signeture for existing book
 Then the book must be found
 
-Scenario:
+Scenario: search for substring of isbn for book
 When user search for substring of isbn for existing book
 Then the book must be found
+
+Scenario Outline: Searching also works when the user/administrator is logged in
+Given the admin or user is logged in
+When user search for substring of <sub> for book
+Then the book must be found  
+Examples:
+|sub|
+|title|
+|author|
+|signeture|
+|isbn|
+
+Scenario Outline: No books match the criteria (substring)
+When user search for substring of <substring from> for non existing book
+Then no book must be found
+Examples:
+|substring from|
+|title|
+|author|
+|signeture|
+|isbn|
 
 Scenario Outline:
 When user search for a <book parameter> that included in more than book

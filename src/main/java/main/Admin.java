@@ -12,7 +12,7 @@ public String username="";
 public String password="";
 public int login;
 public int logout=0;
-public  ArrayList<Admin> v=new ArrayList<Admin>();
+public static ArrayList<Admin> v=new ArrayList<Admin>();
 
 
 
