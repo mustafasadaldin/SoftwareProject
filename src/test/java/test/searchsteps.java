@@ -26,25 +26,25 @@ public class searchsteps {
 		}
 
 	@Given("user want to search for book")
-	public void user_want_to_search_for_book(io.cucumber.datatable.DataTable dt) {
+	public void user_want_to_search_for_book(io.cucumber.datatable.DataTable dataTable) {
 	 b.books.add(new Book());
 	 b.books.add(new Book());
 	 b.books.add(new Book());
 	  
-	 b.books.get(0).title=dt.cell(0, 0);
-	 b.books.get(0).author=dt.cell(0, 1);
-	 b.books.get(0).ISBN=dt.cell(0, 2);
-	 b.books.get(0).signature=dt.cell(0, 3);
+	 b.books.get(0).title=dataTable.cell(0, 0);
+	 b.books.get(0).author=dataTable.cell(0, 1);
+	 b.books.get(0).ISBN=dataTable.cell(0, 2);
+	 b.books.get(0).signature=dataTable.cell(0, 3);
 	 
-	 b.books.get(1).title=dt.cell(1, 0);
-	 b.books.get(1).author=dt.cell(1, 1);
-	 b.books.get(1).ISBN=dt.cell(1, 2);
-	 b.books.get(1).signature=dt.cell(1, 3);
+	 b.books.get(1).title=dataTable.cell(1, 0);
+	 b.books.get(1).author=dataTable.cell(1, 1);
+	 b.books.get(1).ISBN=dataTable.cell(1, 2);
+	 b.books.get(1).signature=dataTable.cell(1, 3);
 	 
-	 b.books.get(2).title=dt.cell(2, 0);
-	 b.books.get(2).author=dt.cell(2, 1);
-	 b.books.get(2).ISBN=dt.cell(2, 2);
-	 b.books.get(2).signature=dt.cell(2, 3);
+	 b.books.get(2).title=dataTable.cell(2, 0);
+	 b.books.get(2).author=dataTable.cell(2, 1);
+	 b.books.get(2).ISBN=dataTable.cell(2, 2);
+	 b.books.get(2).signature=dataTable.cell(2, 3);
 	 
 	}
 
