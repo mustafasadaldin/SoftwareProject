@@ -3,6 +3,7 @@ package main;
 
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.Scanner;
@@ -14,7 +15,7 @@ private String username="";
 private String password="";
 private int login;
 private int logout=0;
-public static ArrayList<Admin> v=new ArrayList<Admin>();
+public static List<Admin> v=new ArrayList<Admin>();
 
 private Logger logger
 = Logger.getLogger(
