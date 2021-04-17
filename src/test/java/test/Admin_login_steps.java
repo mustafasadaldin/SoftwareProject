@@ -47,7 +47,7 @@ public Admin_login_steps( Admin ad) {
 
 	@When("admin login valid cradentials")
 	public void admin_login_valid_cradentials() {
-	    ad.login();
+	    ad.login("mustafa2021@gmail.com","mustafa");
 	   
 	}
 
@@ -59,7 +59,7 @@ public Admin_login_steps( Admin ad) {
 	
 	@When("admin  login with wrong password... invalid cradentials")
 	public void admin_login_with_wrong_password_invalid_cradentials() {
-		ad.login();
+		ad.login("mustafa2021@gmail.com","mustafasadadss");
 	}
 
 	@Then("admin should not be loged in")

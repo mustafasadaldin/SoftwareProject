@@ -25,22 +25,22 @@ public	int j;
 	}
 	
 
-	public  void add(int login) {
+	public  void add(int login,String tit,String auth,String sig,String isb ) {
 		int f;
 		if(login==0) {
 			isAdded= false;
 		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
-			System.out.println("please enter the book title :  ");
-			String s1 =scanner.next();
-			System.out.println("please enter the book author :  ");
-			String s2 =scanner.next();
+			//System.out.println("please enter the book title :  ");
+			String s1 =tit; //scanner.next();
+		//	System.out.println("please enter the book author :  ");
+			String s2 =auth;//scanner.next();
 			String s3="" ;
-			while( true) {
-				System.out.println("please  enter a unique book signature:  ");
+			while( true) { // need refactor need extracting
+			//	System.out.println("please  enter a unique book signature:  ");
 				f=1;
-				 s3 =scanner.next();
+				 s3 =sig;//scanner.next();
 				for(Book k: books) {
 					if(!k.signature.equals(s3)) {
 					
@@ -59,10 +59,10 @@ public	int j;
 				
 				
 			
-			System.out.println("please enter the book ISBN :  ");
-			String s4 =scanner.next();
+		//	System.out.println("please enter the book ISBN :  ");
+			String s4 =isb;//scanner.next();
 			char ss[];
-			while(true) {
+			while(true) {// need refactor need extracting
 				int flagg=0;
 				ss=s4.toCharArray();
 				if(ss.length==10) {
@@ -111,12 +111,12 @@ public	int j;
 		
 		
 	}
-	public void SearchBookTitle() {
+	public void SearchBookTitle(String tit) { 
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book title please:");
-		read=sc.next();
+		read=tit;//sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).title.indexOf(read);
 			if(temp!=-1) {
@@ -134,20 +134,20 @@ public	int j;
 						
 			}
 			
-		JOptionPane.showMessageDialog(null, temps);
+	//	JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
 	
-	public void SearchBookAuthor() {
+	public void SearchBookAuthor(String auth) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book author name please:");
-		read=sc.next();
+		read=auth;//sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).author.indexOf(read);
 			if(temp!=-1) {
@@ -165,19 +165,19 @@ public	int j;
 						
 			}
 			
-		JOptionPane.showMessageDialog(null, temps);
+	//	JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
-	public void SearchBookSig() {
+	public void SearchBookSig(String sig) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book signeture please:");
-		read=sc.next();
+		read=sig;//sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).signature.indexOf(read);
 			if(temp!=-1) {
@@ -195,19 +195,19 @@ public	int j;
 						
 			}
 			
-		JOptionPane.showMessageDialog(null, temps);
+		//JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		//JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
-	public void SearchBookISBN() {
+	public void SearchBookISBN(String isb) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book ISBN please:");
-		read=sc.next();
+		read=isb;//sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).ISBN.indexOf(read);
 			if(temp!=-1) {
@@ -225,10 +225,10 @@ public	int j;
 						
 			}
 			
-		JOptionPane.showMessageDialog(null, temps);
+		//JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		//JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 

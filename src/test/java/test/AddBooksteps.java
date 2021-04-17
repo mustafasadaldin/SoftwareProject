@@ -40,7 +40,7 @@ public Admin a;
 
 	@When("the admin adds a book with title, author ,signature and ISBN")
 	public void the_admin_adds_a_book_with_title_author_signature_and_isbn() {
-	 b.add(a.login);
+	 b.add(a.login,"sadsad","asdsads","saddassda","0140449116");
 	}
 
 	@Then("the book will be added to the system")
