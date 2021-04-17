@@ -1,46 +1,67 @@
 package main;
 
-import java.util.ArrayList;
-import java.util.Scanner;
-
+import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Book {
-	public String title ;
-	public String author ;
-	public String signature;
-	public String ISBN;
-	public static boolean isAdded;
+     String title;
+	 String author;
+	 String signature;
+     String isbn;
+	public static  boolean isAdded;
 	Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
 	public static ArrayList<Book> books=new ArrayList<Book>();
 	String read;
 	Book bk[];
-public	int j;
+public int j;
 	public Book() {
-		this.title ="Unkown";
-		this.signature ="Unkown";
-		this.author ="Unkown";
-		this.ISBN="0";
+		
+	}
+	public void setTitle(String t) {
+		this.title=t;
+	}
+	public String getTitle() {
+		return this.title;
+	}
+	public void setSignature(String s) {
+		this.signature=s;
+	}
+	public String getSignature() {
+		return this.signature;
+		
+	}
+	public void setIsbn(String i) {
+		this.isbn=i;
+	}
+	public String getIsbn() {
+		return this.isbn;
+	}
+	public void setAuthor(String a) {
+		this.author=a;
+	}
+	public String getAuthor() {
+		return this.author;
 	}
 	
 
-	public  void add(int login,String tit,String auth,String sig,String isb ) {
+
+	public static  void add(int login) {
 		int f;
 		if(login==0) {
 			isAdded= false;
 		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
-			//System.out.println("please enter the book title :  ");
-			String s1 =tit; //scanner.next();
-		//	System.out.println("please enter the book author :  ");
-			String s2 =auth;//scanner.next();
+			System.out.println("please enter the book title :  ");
+			String s1 =scanner.next();
+			System.out.println("please enter the book author :  ");
+			String s2 =scanner.next();
 			String s3="" ;
-			while( true) { // need refactor need extracting
-			//	System.out.println("please  enter a unique book signature:  ");
+			while( true) {
+				System.out.println("please  enter a unique book signature:  ");
 				f=1;
-				 s3 =sig;//scanner.next();
+				 s3 =scanner.next();
 				for(Book k: books) {
 					if(!k.signature.equals(s3)) {
 					
@@ -59,10 +80,10 @@ public	int j;
 				
 				
 			
-		//	System.out.println("please enter the book ISBN :  ");
-			String s4 =isb;//scanner.next();
-			char ss[];
-			while(true) {// need refactor need extracting
+			System.out.println("please enter the book ISBN :  ");
+			String s4 =scanner.next();
+			char[] ss;
+			while(true) {
 				int flagg=0;
 				ss=s4.toCharArray();
 				if(ss.length==10) {
@@ -101,7 +122,7 @@ public	int j;
 			b.title=s1;
 			b.author=s2;
 			b.signature=s3;
-			b.ISBN=s4;
+			b.isbn=s4;
 			
 			
 			books.add(b);
@@ -111,12 +132,12 @@ public	int j;
 		
 		
 	}
-	public void SearchBookTitle(String tit) { 
+	public void SearchBookTitle() {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book title please:");
-		read=tit;//sc.next();
+		read=sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).title.indexOf(read);
 			if(temp!=-1) {
@@ -128,26 +149,26 @@ public	int j;
 			String temps="The books that have that title are:"+"\n";
 			for(int k=0;k<j;k++) {
 			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].ISBN+"\n"
+			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
 			+"***************************"+"\n";
 						
 						
 			}
 			
-	//	JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
 	
-	public void SearchBookAuthor(String auth) {
+	public void SearchBookAuthor() {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book author name please:");
-		read=auth;//sc.next();
+		read=sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).author.indexOf(read);
 			if(temp!=-1) {
@@ -159,25 +180,25 @@ public	int j;
 			String temps="The books that have that author name are:"+"\n";
 			for(int k=0;k<j;k++) {
 			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].ISBN+"\n"
+			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
 			+"***************************"+"\n";
 						
 						
 			}
 			
-	//	JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
-	public void SearchBookSig(String sig) {
+	public void SearchBookSig() {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book signeture please:");
-		read=sig;//sc.next();
+		read=sc.next();
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).signature.indexOf(read);
 			if(temp!=-1) {
@@ -189,27 +210,27 @@ public	int j;
 			String temps="The books that have that signeture are:"+"\n";
 			for(int k=0;k<j;k++) {
 			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].ISBN+"\n"
+			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
 			+"***************************"+"\n";
 						
 						
 			}
 			
-		//JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		//JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
-	public void SearchBookISBN(String isb) {
+	public void SearchBookISBN() {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
 		System.out.print("enter book ISBN please:");
-		read=isb;//sc.next();
+		read=sc.next();
 		for(int i=0;i<books.size();i++) {
-			temp=books.get(i).ISBN.indexOf(read);
+			temp=books.get(i).isbn.indexOf(read);
 			if(temp!=-1) {
 				bk[j]=books.get(i);
 				j++;
@@ -219,16 +240,16 @@ public	int j;
 			String temps="The books that have that ISBN are:"+"\n";
 			for(int k=0;k<j;k++) {
 			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].ISBN+"\n"
+			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
 			+"***************************"+"\n";
 						
 						
 			}
 			
-		//JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		//JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 

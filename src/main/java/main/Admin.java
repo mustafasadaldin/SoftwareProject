@@ -3,37 +3,59 @@ package main;
 
 
 import java.util.ArrayList;
-import java.util.Scanner;
 import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.Scanner;
 
 import javax.swing.JOptionPane;
-
-import jdk.jfr.internal.Logger;
 public class Admin {
 Scanner sc=new Scanner(System.in);
-public String username="";
-public String password="";
-public int login;
-public int logout=0;
+private String username="";
+private String password="";
+private int login;
+private int logout=0;
 public static ArrayList<Admin> v=new ArrayList<Admin>();
 
-
-
+private Logger logger
+= Logger.getLogger(
+   Admin.class.getName());
 
  // Scenario1 login with valid cradentials
-	public void login(String user,String pass) {
-	     String s1=user;
-	     String s2=pass;
+public void SetPass(String pass) {
+	this.password=pass;
+}
+public void SetUser(String user) {
+	this.password=user;
+}
+public void SetLogin(int Lin) {
+	this.login=Lin;
+}
+public void SetLogout(int Lout) {
+	this.logout=Lout;
+}
+public int GetLogin() {
+	return this.login;
+}
+public int GetLogout() {
+	return this.logout;
+}
+
+
+
+	public void loginInSys() {
+		
+		logger.log(Level.INFO, "username:");
+		String s1=sc.next();
+		logger.log(Level.INFO, "password:");
+		String s2=sc.next();
 		for(int i=0;i<v.size();i++) {
-		if(s1.compareTo(v.get(i).username)==0) {//need refactor (extract)++inline refactoring
+		if(s1.compareTo(v.get(i).username)==0) {
 			if(s2.compareTo(v.get(i).password)==0) {
 				login=1;
 				logout=0;
 				return;
 			}
 			// Scenario2 if user enter invalid cradentials
-			
-			
 			JOptionPane.showMessageDialog(null, "you enter invalid password");
 			login=0;
 			return;
@@ -44,14 +66,13 @@ public static ArrayList<Admin> v=new ArrayList<Admin>();
 	
 		
 	}
-	
-	public void logout() {
+	public void logoutFromSys() {
 		if(this.login==1) {
 		login=0;
 		logout=1;
 		}
 		
 	}
+	// SOME TEXT FOR TESTING
+	
 }
-	
-	
