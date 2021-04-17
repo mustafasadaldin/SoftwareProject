@@ -136,8 +136,8 @@ public void no_book_must_be_found() {
 
 @Given("the admin or user is logged in")
 public void the_admin_or_user_is_logged_in() {
-	a.SetLogin(1);
-	a.SetLogout(0);
+	a.setLogin(1);
+	a.setLogout(0);
 	
 	
 	

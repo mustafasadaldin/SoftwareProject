@@ -22,8 +22,8 @@ public Admin a;
 }
 	@Given("the admin logged in")
 	public void the_admin_logged_in(io.cucumber.datatable.DataTable dt) {
-	    a.SetLogin(1);
-	    a.SetLogout(0);
+	    a.setLogin(1);
+	    a.setLogout(0);
 	    
 	    Book.books.add(new Book());
 	    Book.books.add(new Book());
@@ -40,7 +40,7 @@ public Admin a;
 
 	@When("the admin adds a book with title, author ,signature and ISBN")
 	public void the_admin_adds_a_book_with_title_author_signature_and_isbn() {
-	 Book.add(a.GetLogin());
+	 Book.add(a.getLogin());
 	}
 
 	@Then("the book will be added to the system")
@@ -50,8 +50,8 @@ public Admin a;
 
 	@Given("the admin logged out")
 	public void the_admin_logged_out() {
-		 a.SetLogin(0);
-		    a.SetLogout(1);
+		 a.setLogin(0);
+		    a.setLogout(1);
 	}
 
 	@Then("the book will not  be added to the system")

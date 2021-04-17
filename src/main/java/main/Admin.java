@@ -21,22 +21,22 @@ private Logger logger
    Admin.class.getName());
 
  // Scenario1 login with valid cradentials
-public void SetPass(String pass) {
+public void setPass(String pass) {
 	this.password=pass;
 }
-public void SetUser(String user) {
+public void setUser(String user) {
 	this.password=user;
 }
-public void SetLogin(int Lin) {
+public void setLogin(int Lin) {
 	this.login=Lin;
 }
-public void SetLogout(int Lout) {
+public void setLogout(int Lout) {
 	this.logout=Lout;
 }
-public int GetLogin() {
+public int getLogin() {
 	return this.login;
 }
-public int GetLogout() {
+public int getLogout() {
 	return this.logout;
 }
 

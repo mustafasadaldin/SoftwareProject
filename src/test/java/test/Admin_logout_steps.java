@@ -21,8 +21,8 @@ public class Admin_logout_steps {
 @Given("the admin  has been logged in")
 public void the_admin_has_been_logged_in() {
 	   
-	a.SetLogin(1);
-	a.SetLogout(0);
+	a.setLogin(1);
+	a.setLogout(0);
 	}
 
 	@When("the admin click logout")
@@ -32,7 +32,7 @@ public void the_admin_has_been_logged_in() {
 
 	@Then("the admin should be logged out")
 	public void the_admin_should_be_logged_out() {
-	   assertTrue(a.GetLogout()==1 && a.GetLogin()==0) ;
+	   assertTrue(a.getLogout()==1 && a.getLogin()==0) ;
 	}
 	
 	

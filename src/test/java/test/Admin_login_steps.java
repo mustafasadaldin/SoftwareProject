@@ -30,12 +30,12 @@ public Admin_login_steps( Admin ad) {
 		ad.v.add(new Admin());
 		ad.v.add(new Admin());
 		ad.v.add(new Admin());
-		ad.v.get(0).SetUser(dt.cell(0, 0));
-		ad.v.get(0).SetPass(dt.cell(0, 1));
-		ad.v.get(1).SetUser(dt.cell(1, 0));
-		ad.v.get(1).SetPass(dt.cell(1, 1));
-		ad.v.get(2).SetUser(dt.cell(2, 0));
-		ad.v.get(2).SetPass(dt.cell(2, 1));
+		ad.v.get(0).setUser(dt.cell(0, 0));
+		ad.v.get(0).setPass(dt.cell(0, 1));
+		ad.v.get(1).setUser(dt.cell(1, 0));
+		ad.v.get(1).setPass(dt.cell(1, 1));
+		ad.v.get(2).setUser(dt.cell(2, 0));
+		ad.v.get(2).setPass(dt.cell(2, 1));
 		
 		
 				
@@ -52,7 +52,7 @@ public Admin_login_steps( Admin ad) {
 
 	@Then("admin should be logged in")
 	public void admin_should_be_logged_in() {
-	   assertTrue(ad.GetLogin()==1);
+	   assertTrue(ad.getLogin()==1);
 	}
 
 	
@@ -63,7 +63,7 @@ public Admin_login_steps( Admin ad) {
 
 	@Then("admin should not be loged in")
 	public void admin_should_not_be_loged_in() {
-	   assertTrue(ad.GetLogin()==0);
+	   assertTrue(ad.getLogin()==0);
 	}
 
 	
