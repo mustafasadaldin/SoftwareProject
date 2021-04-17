@@ -27,11 +27,11 @@ public void setPass(String pass) {
 public void setUser(String user) {
 	this.password=user;
 }
-public void setLogin(int Lin) {
-	this.login=Lin;
+public void setLogin(int lIN) {
+	this.login=lIN;
 }
-public void setLogout(int Lout) {
-	this.logout=Lout;
+public void setLogout(int lOUT) {
+	this.logout=lOUT;
 }
 public int getLogin() {
 	return this.login;
