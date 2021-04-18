@@ -15,7 +15,7 @@ private String username="";
 private String password="";
 private int login;
 private int logout=0;
-public static List<Admin> v=new ArrayList<Admin>();
+private  List<Admin> v=new ArrayList<Admin>();
 
 private Logger logger
 = Logger.getLogger(
@@ -26,7 +26,7 @@ public void setPass(String pass) {
 	this.password=pass;
 }
 public void setUser(String user) {
-	this.password=user;
+	this.username=user;
 }
 public void setLogin(int lIN) {
 	this.login=lIN;
@@ -40,15 +40,24 @@ public int getLogin() {
 public int getLogout() {
 	return this.logout;
 }
+public Admin getAd(int i) {
+	
+	return v.get(i);
+	
+}
+
+public  void setAd() {
+	v.add(new Admin());
+	
+}
 
 
-
-	public void loginInSys() {
+	public void loginInSys(String sS,String sS1 ) {
 		
-		logger.log(Level.INFO, "username:");
-		String s1=sc.next();
-		logger.log(Level.INFO, "password:");
-		String s2=sc.next();
+		
+		String s1=sS;		
+		String s2=sS1;
+		
 		for(int i=0;i<v.size();i++) {
 		if(s1.compareTo(v.get(i).username)==0) {
 			if(s2.compareTo(v.get(i).password)==0) {
@@ -74,7 +83,8 @@ public int getLogout() {
 		}
 		
 	}
-	// SOME TEXT FOR TESTING
-	//lkjskdfhkjsdfhkjdm
+	
+	
+	
 	
 }
