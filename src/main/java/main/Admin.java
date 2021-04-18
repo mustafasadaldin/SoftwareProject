@@ -4,8 +4,6 @@ package main;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
@@ -17,9 +15,6 @@ private int login;
 private int logout=0;
 private  List<Admin> v=new ArrayList<Admin>();
 
-private Logger logger
-= Logger.getLogger(
-   Admin.class.getName());
 
  // Scenario1 login with valid cradentials
 public void setPass(String pass) {
