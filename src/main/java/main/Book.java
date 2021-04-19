@@ -7,8 +7,9 @@ public class Book {
      String title;
      String author;
      String signature;
-     String isbn;	 
-	public static  boolean isAdded;
+     String isbn;
+	 
+  boolean isAdded;
 	Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
 	private List<Book> books=new ArrayList<Book>();
@@ -40,25 +41,35 @@ public int j;
 	public void setAuthor(String a) {
 		this.author=a;
 	}
+	public  void setB() {
+		books.add(new Book());
+
+	}
+	public Book getB(int i) {
+
+		return books.get(i);
+
+	}
 	public String getAuthor() {
 		return this.author;
 	}
-	public  void setB() {
-		books.add(new Book());
-		
+	public boolean isAdded() {
+		return this.isAdded;
 	}
-	public Book getB(int i) {
-		
-		return books.get(i);
-		
+	public void setIsAdded(boolean bool) {
+		this.isAdded=bool;
 	}
+	public boolean getIsAdded() {
+	return	this.isAdded;
+	}
+	
 
 
 	public   void add(int login, String string, String string2, String string3, String string4) {
 		int f;
 		Book b= new Book();
 		if(login==0) {
-			isAdded= false;
+			isAdded=false;
 		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
@@ -70,14 +81,12 @@ public int j;
 				f=1;
 				 
 				for(Book k: books) {
-					if(!k.signature.equals(s3)) {
 					
-					continue;
-					}
+					if(k.signature.equals(s3)) {
 					
 					f=0;
 					
-				}
+				}}
 				
 				if(f==1) {
 					b.signature=s3;
@@ -144,12 +153,11 @@ public int j;
 		
 		
 	}
-	public void SearchBookTitle() {
+	public void SearchBookTitle(String t) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
-		System.out.print("enter book title please:");
-		read=sc.next();
+		read=t;
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).title.indexOf(read);
 			if(temp!=-1) {
@@ -175,12 +183,11 @@ public int j;
 	
 	
 	
-	public void SearchBookAuthor() {
+	public void SearchBookAuthor(String a) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
-		System.out.print("enter book author name please:");
-		read=sc.next();
+		read=a;
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).author.indexOf(read);
 			if(temp!=-1) {
@@ -205,12 +212,11 @@ public int j;
 	}
 	
 	
-	public void SearchBookSig() {
+	public void SearchBookSig(String s) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
-		System.out.print("enter book signeture please:");
-		read=sc.next();
+		read=s;
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).signature.indexOf(read);
 			if(temp!=-1) {
@@ -235,12 +241,11 @@ public int j;
 	}
 	
 	
-	public void searchBookISBN() {
+	public void searchBookISBN(String isb) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
-		System.out.print("enter book ISBN please:");
-		read=sc.next();
+		read=isb;
 		for(int i=0;i<books.size();i++) {
 			temp=books.get(i).isbn.indexOf(read);
 			if(temp!=-1) {

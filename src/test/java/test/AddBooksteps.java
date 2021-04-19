@@ -11,11 +11,11 @@ import static org.junit.Assert.assertEquals;
 public class AddBooksteps {
 
 public Admin a;
-
 public Book b;
 
 
-	public AddBooksteps( Admin a , Book b) {
+
+	public AddBooksteps( Admin a,Book b) {
 	
 	this.b=b;
 	this.a = a;
@@ -27,7 +27,7 @@ public Book b;
 	    
 	    b.setB();
 		b.setB();		
-	  
+
 	 b.getB(0).setTitle(dt.cell(0, 0));
 	 b.getB(0).setAuthor(dt.cell(0, 1));
 	 b.getB(0).setIsbn(dt.cell(0, 2));
@@ -45,7 +45,7 @@ public Book b;
 
 	@Then("the book will be added to the system")
 	public void the_book_will_be_added_to_the_system() {
-	   assertEquals(true,Book.isAdded);
+	   assertEquals(true,b.getIsAdded());
 	}
 
 	@Given("the admin logged out")
@@ -56,7 +56,7 @@ public Book b;
 
 	@Then("the book will not  be added to the system")
 	public void the_book_will_not_be_added_to_the_system() {
-		 assertEquals(false,Book.isAdded);
+		 assertEquals(false,b.getIsAdded());
 	}
 
 
