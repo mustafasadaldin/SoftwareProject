@@ -61,12 +61,12 @@ public  void setAd() {
 				return;
 			}
 			// Scenario2 if user enter invalid cradentials
-			JOptionPane.showMessageDialog(null, "you enter invalid password");
+		//	JOptionPane.showMessageDialog(null, "you enter invalid password");
 			login=0;
 			return;
 		}
 		}
-		JOptionPane.showMessageDialog(null, "you enter invalid username");
+	//	JOptionPane.showMessageDialog(null, "you enter invalid username");
 		login=0;
 	
 		
