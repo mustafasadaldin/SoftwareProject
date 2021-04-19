@@ -9,7 +9,7 @@ public class Book {
      String signature;
      String isbn;
 	 
-  boolean isAdded;
+  private boolean isAdded;
 	Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
 	private List<Book> books=new ArrayList<Book>();
@@ -76,7 +76,8 @@ public int j;
 			String s1 =string;
 			String s2 =string2;
 			String s3=string3;
-			while( true) {
+			boolean brk=true;
+			while( brk) {
 				
 				f=1;
 				 
@@ -94,7 +95,7 @@ public int j;
 				}
 				else {
 					JOptionPane.showMessageDialog(null, "invalid signature");
-         break;
+         brk=false;
 					
 				}
 			}
@@ -153,7 +154,7 @@ public int j;
 		
 		
 	}
-	public void SearchBookTitle(String t) {
+	public void searchBookTitle(String t) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
@@ -183,7 +184,7 @@ public int j;
 	
 	
 	
-	public void SearchBookAuthor(String a) {
+	public void searchBookAuthor(String a) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;
@@ -212,7 +213,7 @@ public int j;
 	}
 	
 	
-	public void SearchBookSig(String s) {
+	public void searchBookSig(String s) {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;

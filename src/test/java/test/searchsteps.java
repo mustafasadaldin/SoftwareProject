@@ -49,18 +49,18 @@ public class searchsteps {
 
 	@When("user search for substring of title for existing book")
 	public void user_search_for_substring_of_title_for_existing_book() {
-	    b.SearchBookTitle("java");
+	    b.searchBookTitle("java");
 	}
 	
 	@When("user search for substring of author for existing book")
 public void user_search_for_substring_of_author_for_existing_book() {
-		b.SearchBookAuthor("must");
+		b.searchBookAuthor("must");
    
 }
 
 @When("user search for substring of signeture for existing book")
 public void user_search_for_substring_of_signeture_for_existing_book() {
-   b.SearchBookSig("must");
+   b.searchBookSig("must");
 }
 
 
@@ -80,14 +80,14 @@ public void user_search_for_substring_of_isbn_for_existing_book() {
 
 @When("user search for a title that included in more than book")
 public void user_search_for_a_title_that_included_in_more_than_book() {
-   b.SearchBookTitle("a");
+   b.searchBookTitle("a");
 }
 
 
 
 @When("user search for a signeture that included in more than book")
 public void user_search_for_a_signeture_that_included_in_more_than_book() {
-   b.SearchBookSig("m");
+   b.searchBookSig("m");
 }
 
 @When("user search for a isbn that included in more than book")
@@ -97,7 +97,7 @@ public void user_search_for_a_isbn_that_included_in_more_than_book() {
 
 @When("user search for a author that included in more than book")
 public void user_search_for_a_author_that_included_in_more_than_book() {
-  b.SearchBookAuthor("m");
+  b.searchBookAuthor("m");
 }
 
 @Then("all books must be found")
@@ -107,18 +107,18 @@ public void all_books_must_be_found() {
 
 @When("user search for substring of title for non existing book")
 public void user_search_for_substring_of_title_for_non_existing_book() {
-   b.SearchBookTitle("kkjkjjk");
+   b.searchBookTitle("kkjkjjk");
 }
 
 
 @When("user search for substring of author for non existing book")
 public void user_search_for_substring_of_author_for_non_existing_book() {
-   b.SearchBookAuthor("kjlkjjkkj");
+   b.searchBookAuthor("kjlkjjkkj");
 }
 
 @When("user search for substring of signeture for non existing book")
 public void user_search_for_substring_of_signeture_for_non_existing_book() {
-    b.SearchBookSig("jkljkljkl");
+    b.searchBookSig("jkljkljkl");
 }
 
 
@@ -145,18 +145,18 @@ public void the_admin_or_user_is_logged_in() {
 
 @When("user search for substring of title for book")
 public void user_search_for_substring_of_title_for_book() {
-    b.SearchBookTitle("java");
+    b.searchBookTitle("java");
 }
 
 @When("user search for substring of author for book")
 public void user_search_for_substring_of_author_for_book() {
-	b.SearchBookAuthor("must");
+	b.searchBookAuthor("must");
 
 }
 
 @When("user search for substring of signeture for book")
 public void user_search_for_substring_of_signeture_for_book() {
-b.SearchBookSig("must");
+b.searchBookSig("must");
 }
 
 
