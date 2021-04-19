@@ -4,20 +4,29 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Book {
-     String title;
-     String author;
-     String signature;
-     String isbn;
+   private  String title;
+   private   String author;
+   private  String signature;
+   private  String isbn;
+   private static final String TITLE_STR="title:";
+   private static final String AUTHOR_STR="author:";
+   private static final String SIGNATURE_STR="signature:";
+   private static final String ISB_STRL="ISBN:";
+   private static final String STARS="***************************";
+   private static final String BOOK_NOT_HERE="the book you search for it is not here";
 	 
   private boolean isAdded;
-	Scanner sc=new Scanner(System.in);
+	//Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
-	private List<Book> books=new ArrayList<Book>();
+	private List<Book> books=new ArrayList<>();
 	String read;
 	Book[] bk;
 private int j;
 	public Book() {
-		
+		title="";
+		author="";
+		signature="";
+		isbn="";
 	}
 	public void setTitle(String t) {
 		this.title=t;
@@ -107,18 +116,21 @@ private int j;
 			
 			String s4 =string4;
 			char[] ss;
-			while(true) {
+			boolean cont;
+			boolean brk0=true;
+			while(brk0) {
+				cont=true;
 				int flagg=0;
 				ss=s4.toCharArray();
 				if(ss.length==10) {
 					for(int i=0;i<10;i++) {
-						if(ss[i]>='0'&&ss[i]<='9')
-							continue;
-						else {
+						if(!(ss[i]>='0'&&ss[i]<='9')) {
+							
+						
 							flagg=1;
 							break;
+						
 						}
-							
 					}
 					if(flagg==0) {
 						int z=10;
@@ -127,18 +139,23 @@ private int j;
 							sum=sum+(z*Integer.parseInt(ss[i]+""));
 							z--;
 						}
-						if(sum%11==0)
-						break;
+						if(sum%11==0) {
+							cont=false;
+							brk0=false;
+							
+						}
+						
 						else {
 							JOptionPane.showMessageDialog(null, "please enter valid isbn");							
 							s4 =scanner.next();
-							continue;
+							cont=false;
 						}
 					}
 				}
-				JOptionPane.showMessageDialog(null, "please enter valid isbn");
-				
+				if(cont) {
+				JOptionPane.showMessageDialog(null, "please enter valid isbn");				
 				s4 =scanner.next();
+				}
 				
 			}
 			
@@ -167,19 +184,23 @@ private int j;
 				j++;
 			}
 		}
+		computeT();
+	}
+	private void computeT() {
 		if(j!=0) {
-			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
+			StringBuilder temps=new StringBuilder("The books that have that title are:"+"\n");
 			for(int k=0;k<j;k++) {
-			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n");
+			temps.append(TITLE_STR+bk[k].title+"\n"+AUTHOR_STR+bk[k].author+"\n"
+			+SIGNATURE_STR+bk[k].signature+'\n'+ISB_STRL+bk[k].isbn+"\n"
+			+STARS+"\n");
+						
 						
 			}
 			
 		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, BOOK_NOT_HERE);
 	}
 	
 	
@@ -196,20 +217,7 @@ private int j;
 				j++;
 			}
 		}
-		if(j!=0) {
-			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
-			for(int k=0;k<j;k++) {
-			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n");
-						
-						
-			}
-			
-		JOptionPane.showMessageDialog(null, temps);
-			return;
-		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		computeT();
 	}
 	
 	
@@ -225,20 +233,7 @@ private int j;
 				j++;
 			}
 		}
-		if(j!=0) {
-			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
-			for(int k=0;k<j;k++) {
-			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n");
-						
-						
-			}
-			
-		JOptionPane.showMessageDialog(null, temps);
-			return;
-		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		computeT();
 	}
 	
 	
@@ -254,19 +249,7 @@ private int j;
 				j++;
 			}
 		}
-		if(j!=0) {
-			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
-			for(int k=0;k<j;k++) {
-			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
-			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n");
-						
-			}
-			
-		JOptionPane.showMessageDialog(null, temps);
-			return;
-		}
-		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		computeT();
 	}
 	
 

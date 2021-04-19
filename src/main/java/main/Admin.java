@@ -13,7 +13,7 @@ private String username="";
 private String password="";
 private int login;
 private int logout=0;
-private  List<Admin> v=new ArrayList<Admin>();
+private  List<Admin> v=new ArrayList<>();
 
 
  // Scenario1 login with valid cradentials
