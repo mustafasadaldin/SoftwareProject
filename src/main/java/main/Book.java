@@ -4,16 +4,13 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Book {
-     String title;
-	 String author;
-	 String signature;
-     String isbn;
+     String title,author,signature,isbn;	 
 	public static  boolean isAdded;
 	Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
-	public static ArrayList<Book> books=new ArrayList<Book>();
+	private List<Book> books=new ArrayList<Book>();
 	String read;
-	Book bk[];
+	Book[] bk;
 public int j;
 	public Book() {
 		
@@ -43,25 +40,32 @@ public int j;
 	public String getAuthor() {
 		return this.author;
 	}
-	
+	public  void setB() {
+		books.add(new Book());
+		
+	}
+	public Book getB(int i) {
+		
+		return books.get(i);
+		
+	}
 
 
-	public static  void add(int login) {
+	public   void add(int login, String string, String string2, String string3, String string4) {
 		int f;
+		Book b= new Book();
 		if(login==0) {
 			isAdded= false;
 		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
-			System.out.println("please enter the book title :  ");
-			String s1 =scanner.next();
-			System.out.println("please enter the book author :  ");
-			String s2 =scanner.next();
-			String s3="" ;
+			String s1 =string;
+			String s2 =string2;
+			String s3=string3;
 			while( true) {
-				System.out.println("please  enter a unique book signature:  ");
+				
 				f=1;
-				 s3 =scanner.next();
+				 
 				for(Book k: books) {
 					if(!k.signature.equals(s3)) {
 					
@@ -73,15 +77,20 @@ public int j;
 				}
 				
 				if(f==1) {
-				
+					b.signature=s3;
 				break;
 				}
+				else {
+					JOptionPane.showMessageDialog(null, "invalid signature");
+         break;
+					
+				}
 			}
+			
 				
 				
 			
-			System.out.println("please enter the book ISBN :  ");
-			String s4 =scanner.next();
+			String s4 =string4;
 			char[] ss;
 			while(true) {
 				int flagg=0;
@@ -118,10 +127,10 @@ public int j;
 				s4 =scanner.next();
 				
 			}
-			Book b= new Book();
+			
 			b.title=s1;
 			b.author=s2;
-			b.signature=s3;
+		
 			b.isbn=s4;
 			
 			
@@ -223,7 +232,7 @@ public int j;
 	}
 	
 	
-	public void SearchBookISBN() {
+	public void searchBookISBN() {
 		 j=0;
 		bk=new Book[books.size()];
 		int temp;

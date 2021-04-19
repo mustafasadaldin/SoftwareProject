@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -32,7 +32,8 @@ public void the_admin_has_been_logged_in() {
 
 	@Then("the admin should be logged out")
 	public void the_admin_should_be_logged_out() {
-	   assertTrue(a.getLogout()==1 && a.getLogin()==0) ;
+	   assertEquals(1,a.getLogout());
+		assertEquals(0,a.getLogin());
 	}
 	
 	

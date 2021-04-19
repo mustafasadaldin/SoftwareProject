@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -27,24 +27,23 @@ public class searchsteps {
 
 	@Given("user want to search for book")
 	public void user_want_to_search_for_book(io.cucumber.datatable.DataTable dt) {
-	 Book.books.add(new Book());
-	 Book.books.add(new Book());
-	 Book.books.add(new Book());
+		b.setB();
+		b.setB();
+		b.setB();
 	  
-	 Book.books.get(0).setTitle(dt.cell(0, 0));
-	 Book.books.get(0).setAuthor(dt.cell(0, 1));
-	 Book.books.get(0).setIsbn(dt.cell(0, 2));
-	 Book.books.get(0).setSignature(dt.cell(0, 3));
+	 b.getB(0).setTitle(dt.cell(0, 0));
+	 b.getB(0).setAuthor(dt.cell(0, 1));
+	 b.getB(0).setIsbn(dt.cell(0, 2));
+	 b.getB(0).setSignature(dt.cell(0, 3));
+	 b.getB(1).setTitle(dt.cell(1, 0));
+	 b.getB(1).setAuthor(dt.cell(1, 1));
+	 b.getB(1).setIsbn(dt.cell(1, 2));
+	 b.getB(1).setSignature(dt.cell(1, 3));
 	 
-	 Book.books.get(1).setTitle(dt.cell(1, 0));
-	 Book.books.get(1).setAuthor(dt.cell(1, 1));
-	 Book.books.get(1).setIsbn(dt.cell(1, 2));
-	 Book.books.get(1).setSignature(dt.cell(1, 3));
-	 
-	 Book.books.get(2).setTitle(dt.cell(2, 0));
-	 Book.books.get(2).setAuthor(dt.cell(2, 1));
-	 Book.books.get(2).setIsbn(dt.cell(2, 2));
-	 Book.books.get(2).setSignature(dt.cell(2, 3));
+	 b.getB(2).setTitle(dt.cell(2, 0));
+	 b.getB(2).setAuthor(dt.cell(2, 1));
+	 b.getB(2).setIsbn(dt.cell(2, 2));
+	 b.getB(2).setSignature(dt.cell(2, 3));
 	 
 	}
 
@@ -67,13 +66,13 @@ public void user_search_for_substring_of_signeture_for_existing_book() {
 
 @When("user search for substring of isbn for existing book")
 public void user_search_for_substring_of_isbn_for_existing_book() {
-   b.SearchBookISBN();
+   b.searchBookISBN();
 }
 
 
 	@Then("the book must be found")
 	public void the_book_must_be_found() {
-	   assertTrue(b.j==1);
+	   assertEquals(1,b.j);
 	}
 	
 	
@@ -93,7 +92,7 @@ public void user_search_for_a_signeture_that_included_in_more_than_book() {
 
 @When("user search for a isbn that included in more than book")
 public void user_search_for_a_isbn_that_included_in_more_than_book() {
-  b.SearchBookISBN();
+  b.searchBookISBN();
 }
 
 @When("user search for a author that included in more than book")
@@ -125,12 +124,12 @@ public void user_search_for_substring_of_signeture_for_non_existing_book() {
 
 @When("user search for substring of isbn for non existing book")
 public void user_search_for_substring_of_isbn_for_non_existing_book() {
-    b.SearchBookISBN();
+    b.searchBookISBN();
 }
 
 @Then("no book must be found")
 public void no_book_must_be_found() {
-	 assertTrue(b.j==0);
+	 assertEquals(0,b.j);
    
 }
 
@@ -163,7 +162,7 @@ b.SearchBookSig();
 
 @When("user search for substring of isbn for book")
 public void user_search_for_substring_of_isbn_for_book() {
-b.SearchBookISBN();
+b.searchBookISBN();
 }
 
 	

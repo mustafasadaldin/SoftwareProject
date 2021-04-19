@@ -1,6 +1,6 @@
 package test;
 
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,7 +50,7 @@ public Admin_login_steps( Admin ad) {
 
 	@Then("admin should be logged in")
 	public void admin_should_be_logged_in() {
-	   assertTrue(ad.getLogin()==1);
+	   assertEquals(1,ad.getLogin());
 	}
 
 	
@@ -61,7 +61,7 @@ public Admin_login_steps( Admin ad) {
 
 	@Then("admin should not be loged in")
 	public void admin_should_not_be_loged_in() {
-	   assertTrue(ad.getLogin()==0);
+	   assertEquals(0,ad.getLogin());
 	}
 
 	
