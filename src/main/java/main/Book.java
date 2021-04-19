@@ -130,7 +130,7 @@ private int j;
 						if(sum%11==0)
 						break;
 						else {
-						//	JOptionPane.showMessageDialog(null, "please enter valid isbn");							
+						//	JOptionPane.showMessageDialog(null, "please enter valid isbn");	asdads						
 							s4 =scanner.next();
 							continue;
 						}
