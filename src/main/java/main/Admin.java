@@ -54,22 +54,22 @@ public  void setAd() {
 		String s2=sS1;
 		
 		for(int i=0;i<v.size();i++) {
-		if(s1.compareTo(v.get(i).username)==0) {
-			if(s2.compareTo(v.get(i).password)==0) {
+		if(checkCradentials(s1, s2, i)) {
+			
 				login=1;
 				logout=0;
 				return;
-			}
-			// Scenario2 if user enter invalid cradentials
-			JOptionPane.showMessageDialog(null, "you enter invalid password");
-			login=0;
-			return;
+			
+			
 		}
 		}
-		JOptionPane.showMessageDialog(null, "you enter invalid username");
+		JOptionPane.showMessageDialog(null, "you enter invalid username or password");
 		login=0;
 	
 		
+	}
+	private boolean checkCradentials(String s1, String s2, int i) {
+		return (s1.compareTo(v.get(i).username)==0)&&(s2.compareTo(v.get(i).password)==0);
 	}
 	public void logoutFromSys() {
 		if(this.login==1) {
