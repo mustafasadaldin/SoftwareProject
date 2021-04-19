@@ -72,7 +72,7 @@ private int j;
 		Book b= new Book();
 		if(login==0) {
 			isAdded=false;
-	//	JOptionPane.showMessageDialog(null, "you should be logged in");
+		JOptionPane.showMessageDialog(null, "you should be logged in");
 	}
 		else {
 			String s1 =string;
@@ -96,7 +96,7 @@ private int j;
 				break;
 				}
 				else {
-				//	JOptionPane.showMessageDialog(null, "invalid signature");
+					JOptionPane.showMessageDialog(null, "invalid signature");
          brk=false;
 					
 				}
@@ -130,13 +130,14 @@ private int j;
 						if(sum%11==0)
 						break;
 						else {
-						//	JOptionPane.showMessageDialog(null, "please enter valid isbn");	asdads						
+							JOptionPane.showMessageDialog(null, "please enter valid isbn");							
 							s4 =scanner.next();
 							continue;
 						}
 					}
 				}
-			//	JOptionPane.showMessageDialog(null, "please enter valid isbn");				
+				JOptionPane.showMessageDialog(null, "please enter valid isbn");
+				
 				s4 =scanner.next();
 				
 			}
@@ -148,7 +149,7 @@ private int j;
 			
 			
 			books.add(b);
-		//	JOptionPane.showMessageDialog(null, "book added succesfully");
+			JOptionPane.showMessageDialog(null, "book added succesfully");
 			isAdded= true;
 		}
 		
@@ -167,19 +168,18 @@ private int j;
 			}
 		}
 		if(j!=0) {
-			String temps="The books that have that title are:"+"\n";
+			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
 			for(int k=0;k<j;k++) {
-			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
+			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
 			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n";
-						
+			+"***************************"+"\n");
 						
 			}
 			
-	//	JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
@@ -197,19 +197,19 @@ private int j;
 			}
 		}
 		if(j!=0) {
-			String temps="The books that have that author name are:"+"\n";
+			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
 			for(int k=0;k<j;k++) {
-			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
+			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
 			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n";
+			+"***************************"+"\n");
 						
 						
 			}
 			
-		//JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
@@ -226,19 +226,19 @@ private int j;
 			}
 		}
 		if(j!=0) {
-			String temps="The books that have that signeture are:"+"\n";
+			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
 			for(int k=0;k<j;k++) {
-			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
+			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
 			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n";
+			+"***************************"+"\n");
 						
 						
 			}
 			
-	//	JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 	
@@ -255,19 +255,18 @@ private int j;
 			}
 		}
 		if(j!=0) {
-			String temps="The books that have that ISBN are:"+"\n";
+			StringBuilder temps=new StringBuilder( "The books that have that signeture are:"+"\n");
 			for(int k=0;k<j;k++) {
-			temps+="title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
+			temps.append("title: "+bk[k].title+"\n"+"author: "+bk[k].author+"\n"
 			+"signature: "+bk[k].signature+'\n'+"ISBN: "+bk[k].isbn+"\n"
-			+"***************************"+"\n";
-						
+			+"***************************"+"\n");
 						
 			}
 			
-	//	JOptionPane.showMessageDialog(null, temps);
+		JOptionPane.showMessageDialog(null, temps);
 			return;
 		}
-	//	JOptionPane.showMessageDialog(null, "the book you search for it is not here");
+		JOptionPane.showMessageDialog(null, "the book you search for it is not here");
 	}
 	
 
