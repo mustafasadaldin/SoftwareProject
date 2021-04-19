@@ -16,7 +16,7 @@ public class Book {
    private static final String BOOK_NOT_HERE="the book you search for it is not here";
 	 
   private boolean isAdded;
-	//Scanner sc=new Scanner(System.in);
+	
 	static Scanner scanner=new Scanner(System.in);
 	private List<Book> books=new ArrayList<>();
 	String read;
