@@ -4,7 +4,10 @@ import java.util.*;
 import javax.swing.JOptionPane;
 
 public class Book {
-     String title,author,signature,isbn;	 
+     String title;
+     String author;
+     String signature;
+     String isbn;	 
 	public static  boolean isAdded;
 	Scanner sc=new Scanner(System.in);
 	static Scanner scanner=new Scanner(System.in);
