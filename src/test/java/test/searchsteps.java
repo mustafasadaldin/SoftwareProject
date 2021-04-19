@@ -72,7 +72,7 @@ public void user_search_for_substring_of_isbn_for_existing_book() {
 
 	@Then("the book must be found")
 	public void the_book_must_be_found() {
-	   assertEquals(1,b.j);
+	   assertEquals(1,b.getJ());
 	}
 	
 	
@@ -102,7 +102,7 @@ public void user_search_for_a_author_that_included_in_more_than_book() {
 
 @Then("all books must be found")
 public void all_books_must_be_found() {
-    assertTrue(b.j>1);
+    assertTrue(b.getJ()>1);
 }
 
 @When("user search for substring of title for non existing book")
@@ -129,7 +129,7 @@ public void user_search_for_substring_of_isbn_for_non_existing_book() {
 
 @Then("no book must be found")
 public void no_book_must_be_found() {
-	 assertEquals(0,b.j);
+	 assertEquals(0,b.getJ());
    
 }
 

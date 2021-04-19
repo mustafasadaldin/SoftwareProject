@@ -15,7 +15,7 @@ public class Book {
 	private List<Book> books=new ArrayList<Book>();
 	String read;
 	Book[] bk;
-public int j;
+private int j;
 	public Book() {
 		
 	}
@@ -62,7 +62,9 @@ public int j;
 	public boolean getIsAdded() {
 	return	this.isAdded;
 	}
-	
+	public int getJ() {
+		return	this.j;
+		}
 
 
 	public   void add(int login, String string, String string2, String string3, String string4) {
@@ -128,15 +130,13 @@ public int j;
 						if(sum%11==0)
 						break;
 						else {
-							JOptionPane.showMessageDialog(null, "please enter valid isbn");
-							System.out.println(" reenter the book ISBN :  ");
+							JOptionPane.showMessageDialog(null, "please enter valid isbn");							
 							s4 =scanner.next();
 							continue;
 						}
 					}
 				}
-				JOptionPane.showMessageDialog(null, "please enter valid isbn");
-				System.out.println(" reenter the book ISBN :  ");
+				JOptionPane.showMessageDialog(null, "please enter valid isbn");				
 				s4 =scanner.next();
 				
 			}
