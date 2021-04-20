@@ -56,8 +56,8 @@ public  void setAd() {
 		String s1=sS;		
 		String s2=sS1;
 		
-		for(int i=0;i<v.size();i++) {
-		if(checkCradentials(s1, s2, i)) {
+		
+		if(checkCradentials(s1, s2)) {
 			
 				login=1;
 				logout=0;
@@ -65,14 +65,22 @@ public  void setAd() {
 			
 			
 		}
-		}
+		
 	
 		 logger.log(Level.INFO, "logging: {0} ", "you enter invalid username or password");
 		login=0;
 	
 		
 	}
-	private boolean checkCradentials(String s1, String s2, int i) {
+	private boolean checkCradentials(String s1, String s2) {
+		for(int i=0;i<v.size();i++) {
+		if( checkup(s1, s2, i)) {
+		return true;
+		}
+		}
+		return false;
+	}
+	private boolean checkup(String s1, String s2, int i) {
 		return (s1.compareTo(v.get(i).username)==0)&&(s2.compareTo(v.get(i).password)==0);
 	}
 	public void logoutFromSys() {
