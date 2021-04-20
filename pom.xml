@@ -43,7 +43,7 @@
 <testSourceDirectory>src/test/java </testSourceDirectory>
 <pluginManagement>
 <plugins>
-
+ 
 	
 <plugin>
 <groupId>org.sonarsource.scanner.maven</groupId>

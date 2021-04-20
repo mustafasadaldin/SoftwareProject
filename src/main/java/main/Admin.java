@@ -7,6 +7,9 @@ import java.util.List;
 import java.util.Scanner;
 
 import javax.swing.JOptionPane;
+
+import java.util.logging.Level;
+import java.util.logging.Logger;
 public class Admin {
 Scanner sc=new Scanner(System.in);
 private String username="";
@@ -15,7 +18,9 @@ private int login;
 private int logout=0;
 private  List<Admin> v=new ArrayList<>();
 
-
+private Logger logger
+= Logger.getLogger(
+    Admin.class.getName());
  // Scenario1 login with valid cradentials
 public void setPass(String pass) {
 	this.password=pass;
@@ -63,7 +68,8 @@ public  void setAd() {
 			
 		}
 		}
-		JOptionPane.showMessageDialog(null, "you enter invalid username or password");
+	
+		 logger.log(Level.INFO, "logging: {0} ", "you enter invalid username or password");
 		login=0;
 	
 		
