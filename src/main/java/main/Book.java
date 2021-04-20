@@ -144,15 +144,7 @@ private int j;
 			int flagg=0;
 			ss=s4.toCharArray();
 			if(ss.length==10) {
-				for(int i=0;i<10;i++) {
-					if(checkEachchar(ss, i)) {
-						
-					
-						flagg=1;
-						break;
-					
-					}
-				}
+				flagg = checkIsbn(ss, flagg);
 				if(flagg==0) {
 					int z=10;
 					int sum=0;
@@ -175,8 +167,17 @@ private int j;
 		}
 		return s4;
 	}
-	private boolean checkEachchar(char[] ss, int i) {
-		return !(ss[i]>='0'&&ss[i]<='9');
+	private int checkIsbn(char[] ss, int flagg) {
+		for(int i=0;i<10;i++) {
+			if(!(ss[i]>='0'&&ss[i]<='9')) {
+				
+			
+				flagg=1;
+				break;
+			
+			}
+		}
+		return flagg;
 	}
 	private int sumOfIsbn(char[] ss, int z, int sum) {
 		for(int i=0;i<ss.length;i++) {
