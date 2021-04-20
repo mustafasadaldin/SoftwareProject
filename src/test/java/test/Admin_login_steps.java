@@ -27,6 +27,12 @@ public Admin_login_steps( Admin ad) {
 
 	@Given("admin want to login")
 	public void admin_want_to_login(io.cucumber.datatable.DataTable dt) {
+		storeAdmins(dt);		
+				
+}
+
+
+	private void storeAdmins(io.cucumber.datatable.DataTable dt) {
 		ad.setAd();
 		ad.setAd();
 		ad.setAd();
@@ -35,9 +41,8 @@ public Admin_login_steps( Admin ad) {
 		ad.getAd(1).setUser(dt.cell(1, 0));
 		ad.getAd(1).setPass(dt.cell(1, 1));		
 		ad.getAd(2).setUser(dt.cell(2, 0));
-		ad.getAd(2).setPass(dt.cell(2, 1));		
-				
-}
+		ad.getAd(2).setPass(dt.cell(2, 1));
+	}
 
 	
 	

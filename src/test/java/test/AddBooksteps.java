@@ -25,7 +25,10 @@ public Book b;
 	    a.setLogin(1);
 	    a.setLogout(0);
 	    
-	    b.setB();
+	    storeBooks(dt);
+	}
+	private void storeBooks(io.cucumber.datatable.DataTable dt) {
+		b.setB();
 		b.setB();		
 
 	 b.getB(0).setTitle(dt.cell(0, 0));

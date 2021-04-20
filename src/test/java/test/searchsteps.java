@@ -27,6 +27,11 @@ public class searchsteps {
 
 	@Given("user want to search for book")
 	public void user_want_to_search_for_book(io.cucumber.datatable.DataTable dt) {
+		storeBooks(dt);
+	 
+	}
+
+	private void storeBooks(io.cucumber.datatable.DataTable dt) {
 		b.setB();
 		b.setB();
 		b.setB();
@@ -44,7 +49,6 @@ public class searchsteps {
 		 b.getB(2).setAuthor(dt.cell(2, 1));
 		 b.getB(2).setIsbn(dt.cell(2, 2));
 		 b.getB(2).setSignature(dt.cell(2, 3));
-	 
 	}
 
 	@When("user search for substring of title for existing book")
